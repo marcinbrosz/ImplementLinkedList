@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace ImplementLinkedList
 
 //Doubly Linked List
 {
-    class GenericMyLinkedList<T>
+    class GenericMyLinkedList<T> : IEnumerable<T>
     {
         public class Node
         {
@@ -137,5 +138,9 @@ namespace ImplementLinkedList
             }
         }
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
